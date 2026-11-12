@@ -3,7 +3,7 @@ import { NodeStreamableHTTPServerTransport } from "@modelcontextprotocol/node";
 import { createMcpServer } from "./mcp.js";
 
 const port = Number(process.env.PORT ?? 3000);
-const host = process.env.HOST ? "0.0.0.0" : "127.0.0.1";
+const host = process.env.PORT ? "0.0.0.0" : "127.0.0.1";
 
 const httpServer = createServer(async (req, res) => {
   if (req.method === "GET" && req.url === "/health") {
